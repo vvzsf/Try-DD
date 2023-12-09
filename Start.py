@@ -4,7 +4,7 @@ from queue import Queue  # Import the Queue class
 
 def main():
     update_queue = Queue()  # Creating a Queue instance
-    updater = Updater("6625459474:AAEWMFsJYWg8QDb5aO56BRUvS4Mpul98TF8", use_context=True, update_queue=update_queue)
+    updater = Updater("6625459474:AAEWMFsJYWg8QDb5aO56BRUvS4Mpul98TF8", update_queue=update_queue)
 
     dp = updater.dispatcher
 
