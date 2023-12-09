@@ -1,19 +1,24 @@
-from telegram import Update
-from telegram.ext import CallbackContext
+from pyrogram import Client, filters
 
-# Handle /start command
-def start(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text('Welcome to the Video File Renamer bot! Please send me a video file along with a custom thumbnail to rename the video with the specified thumbnail.')
+app = Client("my_bot")
 
-# Handle /thumbnail command
-def set_thumbnail(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text('Please send the custom thumbnail you want to set for the video.')
+# Command to set a custom thumbnail
+@app.on_message(filters.command("thumbnail"))
+def set_thumbnail(client, message):
+    # Handle logic to set a custom thumbnail
+    pass
 
-# Handle /upload command
-def handle_upload(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text('Please send me the link to the file you want to upload.')
+# Command to upload a file
+@app.on_message(filters.command("upload"))
+def upload_file(client, message):
+    # Handle logic to upload a file
+    pass
 
-# Handle /dl command
-def handle_download(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text('Please provide the details for video processing using ffmpeg.')
+# Command for using ffmpeg support
+@app.on_message(filters.command("dl"))
+def ffmpeg_support(client, message):
+    # Handle logic with ffmpeg support
+    pass
 
+# Run the bot
+app.run()
