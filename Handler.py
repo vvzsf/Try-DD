@@ -1,4 +1,4 @@
-from pyrogram import Client, filters
+from pyrogram import Client
 import os
 
 api_id = int(os.environ.get("API_ID"))
