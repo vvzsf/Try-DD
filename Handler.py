@@ -8,13 +8,13 @@ bot_token = os.environ.get("BOT_TOKEN")
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 # Function to handle the welcome message
-@app.on_chat_members_added()
+@app.on_chat_member_updated()
 def welcome(client, message):
     chat_id = message.chat.id
-    new_members = message.new_chat_members
+    new_member = message.new_chat_member
 
-    for member in new_members:
-        username = member.username
+    if new_member:
+        username = new_member.username if new_member.username else new_member.first_name
         welcome_message = f"Welcome, @{username}! Thanks for joining."
 
         # Send welcome message
