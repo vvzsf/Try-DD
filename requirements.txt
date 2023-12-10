@@ -1,3 +1,4 @@
 python-telegram-bot
 pyrogram
 TgCrypto
+pip install pyrogram==1.4.1
