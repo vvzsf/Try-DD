@@ -20,7 +20,7 @@ def handle_image(update: Update, context: CallbackContext) -> None:
         file = context.bot.get_file(file_id)
         file.download('image.jpg')
         # Send image to backend server for background removal
-        response = requests.post('http://your-backend-server-url/remove-background', files={'image': open('image.jpg', 'rb')})
+        response = requests.post('https://www.remove.bg/', files={'image': open('image.jpg', 'rb')})
         # Send the processed image back to the user
         update.message.reply_photo(response.content)
         # Remove downloaded image
