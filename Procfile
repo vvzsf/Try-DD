@@ -1,1 +1,1 @@
-worker1: python main.py
+web: python backend_server.py
